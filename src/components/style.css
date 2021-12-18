@@ -1,0 +1,40 @@
+body {
+    
+    background-color: gray;
+}
+.container{
+    text-align: center;
+    position: center;
+    height: 100%; 
+    padding-left:0.5vw;
+    padding-top:2vw;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.board{
+    padding-top: 1vw!important;
+}
+
+.picture{
+    height:40vw;
+    width: 40vw;
+    padding-left:30%;
+}
+
+@media only screen and (max-width: 900px){
+    .container{
+        padding-top: 16vw;
+        font-size: 7vw;
+    }
+    .board{
+        padding-top: 20%!important;}
+    
+    .picture{
+        height:70vw;
+        width: 70vw;
+        padding-left: 13vw;
+    }
+    
+}
+
