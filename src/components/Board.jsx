@@ -42,6 +42,22 @@ const PlayBtn = styled(Button)({
 
 });
 
+const PlayBtn2 = styled(Button)({
+  backgroundColor: 'gray',
+  borderRadius: 4,
+  fontSize: "20px",
+  cursor: 'pointer',
+  width: "160px",
+  height: "40px",
+  textDecoration: 'none',
+  fontWeight:'bold',
+  
+  '&:hover':{
+    background: 'white',
+  },
+
+});
+
 class Board extends Component {
   
   constructor(props) {
@@ -105,7 +121,21 @@ class Board extends Component {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
 
-    if(!(winner || moveNum === 9) && !this.state.isnewGame){
+    if((winner || moveNum === 9) && !this.state.isnewGame){
+      return (
+        <div className="container " > 
+          <div className="board">
+            <div > {status} </div> 
+            <div className="board-row"> {this.renderSquare(0)}{this.renderSquare(1)}{this.renderSquare(2)} </div>
+            <div className="board-row"> {this.renderSquare(3)}{this.renderSquare(4)}{this.renderSquare(5)} </div>
+            <div className="board-row"> {this.renderSquare(6)}{this.renderSquare(7)}{this.renderSquare(8)} </div>  
+          </div>
+              <PlayBtn2   onClick={() => {this.newGame()}} > New Game </PlayBtn2>
+        </div>
+
+    );
+    }
+     else if(!(winner || moveNum === 9) && !this.state.isnewGame){
         return (
               <div className="container board" > 
                     <div > {status} </div> 
@@ -120,19 +150,19 @@ class Board extends Component {
                 <div>                   
                   <div className="container"> Welcome </div>
                   <img  className="picture" src={ticPic} alt="ticPic"  />
-                    <div>
-                      <PlayBtn onClick={() => {this.setState({isnewGame : false});}} > Play Game</PlayBtn>
+                    <div className="container">
+                      <PlayBtn2 onClick={() => {this.setState({isnewGame : false});}} > Play Game</PlayBtn2>
                     </div>
                 </div>
         );
-    }   
+    } 
    else{
         return(
           <div>
               <div className="container"> {status} </div> 
               <img  className="picture" src={ticPic} alt="ticPic" />
-              <div>
-              <PlayBtn  onClick={() => {this.newGame()}} > New Game </PlayBtn>
+              <div className="container">
+              <PlayBtn2  onClick={() => {this.newGame()}} > New Game </PlayBtn2>
               </div>
           </div>   
         );

@@ -22,17 +22,17 @@ const BigScreen = styled(Button)({
 });
 
 const SmallScreen = styled(Button)({
-    width:"150px",
+    border: 0,
+    color: 'black',
     background: 'gray',
     borderRadius: 5,
-    color: 'black',
-    height:"150px",
-    border: 0,
     boxShadow: '0 3px 5px 2px rgba(50, 50, 50, .7)',
-    marginTop: "10px",
-    fontSize:"80px",
-    paddingleft:"35px",
-    marginRight: "10px",
+    height:"25vw",
+    paddingleft:"35vw",
+    width:"25vw",
+    marginRight: "2vw",
+    marginTop: "2vw",
+    fontSize:"15vw",
     
 });
 
